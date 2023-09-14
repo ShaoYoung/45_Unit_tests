@@ -1,6 +1,6 @@
 # Задание 1. Тесты класса Calculator
 
-from hw_1 import Calculator
+from hw_1_1 import Calculator
 
 
 def test_purchase_amount_not_number(calculator: Calculator):
