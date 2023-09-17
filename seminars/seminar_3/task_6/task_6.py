@@ -6,7 +6,8 @@ class User:
     def __init__(self, login: str, password: str):
         self._login = login
         self._password = password
-        self._auth = False
+        self._authorized = False
+        self.admin = False
 
     @property
     def login(self):
@@ -16,8 +17,15 @@ class User:
     def password(self):
         return self._password
 
+    @property
+    def authorized(self):
+        return self._authorized
+
     def auth(self, login: str, password: str) -> bool:
         if self._login == login and self._password == password:
-            self._auth = True
+            self._authorized = True
             return True
         return False
+
+    def __str__(self):
+        return f'{self.login}, {self.password}, {self.authorized}, {self.admin}'
